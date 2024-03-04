@@ -1,7 +1,6 @@
 package com.techplement.utils;
 
 import java.io.IOException;
-
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -19,7 +18,7 @@ public class Resources {
 	}
 
 	public static String getApiUrl() {
-		final String API_URL = "https://v6.exchangerate-api.com/v6/" + Constrains.API_KEY.getResource() + "/latest/";
+		final String API_URL = "https://v6.exchangerate-api.com/v6/" + APIConstants.API_KEY.getValue() + "/latest/";
 		return API_URL;
 	}
 
@@ -40,8 +39,9 @@ public class Resources {
 		System.out.println("1. Add favorite currency");
 		System.out.println("2. View favorite currencies");
 		System.out.println("3. Update favorite currency");
-		System.out.println("4. Convert currency");
-		System.out.println("5. Exit");
+		System.out.println("4. Convert currency from favorite currencies");
+		System.out.println("5. Convert currency");
+		System.out.println("6. Exit");
 		System.out.print("Choice : ");
 
 	}

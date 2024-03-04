@@ -6,9 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
 import com.techplement.utils.Resources;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class Converter {
 
@@ -31,6 +28,23 @@ public class Converter {
 		}
 	}
 
+	public void getExchangeRateFromFavorites(int code1, int code2, BigDecimal amount) {
+
+		if (favoriteCurrencies.isEmpty()) {
+			System.err.println("Favorite currencies is empty. Please add currencies..!");
+		} 
+		else {
+			if (favoriteCurrencies.containsKey(code1) && favoriteCurrencies.containsKey(code2)) {
+				String firstContryCode = favoriteCurrencies.get(code1);
+				String secondContryCode = favoriteCurrencies.get(code2);
+				getExchangeRate(firstContryCode, secondContryCode, amount);
+
+			} else {
+				System.err.println("Key not found in favorites.");
+			}
+		}
+	}
+
 	public void updateFavoriteCurrency(int num, String currency) {
 		if (favoriteCurrencies.containsKey(num)) {
 			favoriteCurrencies.put(num, currency);
@@ -42,7 +56,6 @@ public class Converter {
 
 	public void getExchangeRate(String convertFrom, String convertTo, BigDecimal amount) {
 		try {
-
 			String stringResponse = Resources.getApiResponse(convertFrom);
 			JSONObject jsonObject = new JSONObject(stringResponse);
 			JSONObject ratesObject = jsonObject.getJSONObject("conversion_rates");
