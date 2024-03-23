@@ -1,4 +1,4 @@
-package com.techplement.EmailSender;
+package com.techplement.services;
 
 import java.io.IOException;
 

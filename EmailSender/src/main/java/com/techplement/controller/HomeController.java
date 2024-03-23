@@ -1,7 +1,8 @@
 package com.techplement.controller;
 
 import java.util.Scanner;
-import com.techplement.EmailSender.EmailSender;
+
+import com.techplement.services.EmailSender;
 import com.techplement.utils.Utility;
 
 public class HomeController {
