@@ -26,24 +26,5 @@ public class Utility {
 		return password;
 	}
 	
-	public static void printQuitMsg() {
-
-		System.out.println();
-		System.out.print("Thank You for Using and Have a good day :) ");
-
-	}
-
-	public static void printWelcome() {
-		System.out.println("Welcome to Email Sender App");
-	}
-
-	public static void printMenu() {
-
-		System.out.println("\nOptions:");
-		System.out.println("1. Send Email");
-		System.out.println("2. Exit");
-		System.out.print("Choice : ");
-
-	}
 
 }

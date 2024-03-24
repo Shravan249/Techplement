@@ -2,7 +2,6 @@ package com.techplement.utils;
 
 import java.io.IOException;
 import java.util.Properties;
-
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;

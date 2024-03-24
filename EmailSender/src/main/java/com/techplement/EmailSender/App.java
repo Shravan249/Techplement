@@ -1,13 +1,15 @@
 package com.techplement.EmailSender;
 
-import java.io.IOException;
-
-import com.techplement.controller.HomeController;
+import javax.swing.SwingUtilities;
+import com.techplement.guis.EmailSenderUI;
 
 public class App {
 
-	public static void main(String[] args) throws IOException {
-
-		HomeController.startApp();
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(() -> {
+			EmailSenderUI gui = new EmailSenderUI();
+			gui.setVisible(true);
+		});
 	}
+
 }
